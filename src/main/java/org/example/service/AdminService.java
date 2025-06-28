@@ -1,6 +1,8 @@
 package org.example.service;
 
 import org.example.entity.Dish;
+import org.example.entity.Order;
+import org.example.entity.Table;
 import org.example.entity.User;
 import org.example.entity.enums.Role;
 
@@ -45,7 +47,11 @@ public class AdminService {
     }
 
     private void showOrders() {
-        tables.forEach(System.out::println);
+        for (Table table : tables) {
+            for (Order order : table.getOrders()) {
+                System.out.println(order);
+            }
+        }
     }
 
     private void addStaff() {

@@ -19,18 +19,19 @@ public class DataSource {
     public static User currentUser = null;
 
     static {
-        tables.add(new Table(1, Status.INACTIVE));
-        tables.add(new Table(2, Status.INACTIVE));
-        tables.add(new Table(3, Status.INACTIVE));
-        tables.add(new Table(4, Status.INACTIVE));
-        tables.add(new Table(5, Status.INACTIVE));
-        tables.add(new Table(6, Status.INACTIVE));
-        tables.add(new Table(7, Status.INACTIVE));
-        tables.add(new Table(8, Status.INACTIVE));
-        tables.add(new Table(9, Status.INACTIVE));
-        tables.add(new Table(10, Status.INACTIVE));
+//        tables.add(new Table("1",1,"", Status.INACTIVE));
+//        tables.add(new Table("2",2,"", Status.INACTIVE));
+//        tables.add(new Table("3",3,"", Status.INACTIVE));
+//        tables.add(new Table("4",4,"", Status.INACTIVE));
+//        tables.add(new Table("5",5,"", Status.INACTIVE));
+//        tables.add(new Table("6",6,"", Status.INACTIVE));
+//        tables.add(new Table("7",7,"", Status.INACTIVE));
+//        tables.add(new Table("8",8,"", Status.INACTIVE));
+//        tables.add(new Table("9",9,"", Status.INACTIVE));
+//        tables.add(new Table("10",10,"", Status.INACTIVE));
 
         users.add(new User("admin","admin", Role.ADMIN));
+        users.add(new User("a", "a", Role.STAFF));
 
         dishes.add(new Dish("somsa", 10000));
         dishes.add(new Dish("manti", 8000));

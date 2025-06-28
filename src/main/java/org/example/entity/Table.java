@@ -11,15 +11,17 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 public class Table {
-    private final String id = UUID.randomUUID().toString();
+    private String id;
     private Integer tableNumber;
     private List<Order> orders = new ArrayList<>();
     private String staffId;
     private Integer overallPrice = 0;
     private Status status;
 
-    public Table(Integer tableNumber, Status status) {
+    public Table(String id, Integer tableNumber, String staffId, Status status) {
+        this.id = id;
         this.tableNumber = tableNumber;
+        this.staffId = staffId;
         this.status = status;
     }
 }

@@ -17,8 +17,8 @@ public class User {
     private String surname;
     private String login;
     private String password;
-    private Integer countOfOrders;
-    private Integer ordersPrice;
+    private Integer countOfOrders = 0;
+    private Integer ordersPrice = 0;
 
     public User(String login, String password, Role role) {
         this.login = login;

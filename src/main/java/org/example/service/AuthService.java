@@ -15,14 +15,17 @@ public class AuthService {
             String password = strScanner.nextLine();
             for (User user : users) {
                 if (user.getLogin().equals(login) &&
-                        user.getPassword().equals(password)){
-                    if (user.getRole().equals(Role.ADMIN)){
-                        new AdminService().service();
-                    }
-                    else {
+                        user.getPassword().equals(password) &&
+                        user.getRole().equals(Role.ADMIN)) {
+
+                    new AdminService().service();
+                }
+                        else if (user.getLogin().equals(login) &&
+                        user.getPassword().equals(password) &&
+                        user.getRole().equals(Role.STAFF )) {
+                            currentUser = user;
                         new OrderService().service();
                     }
-                }
             }
         }
     }

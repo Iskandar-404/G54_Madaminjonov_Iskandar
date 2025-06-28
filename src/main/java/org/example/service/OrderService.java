@@ -5,6 +5,8 @@ import org.example.entity.Order;
 import org.example.entity.Table;
 import org.example.entity.enums.Status;
 
+import java.util.UUID;
+
 import static org.example.db.DataSource.*;
 
 public class OrderService {
@@ -71,15 +73,15 @@ public class OrderService {
                     table.getStatus().equals(Status.ACTIVE) &&
                     table.getStaffId().equals(currentUser.getId())){
                 addOrder(table);
-            }
-            else if (table.getTableNumber() == num &&
-                    table.getStatus().equals(Status.INACTIVE)){
-                Table tb = new Table();
-                tb.setTableNumber(num);
-                tb.setStaffId(currentUser.getId());
-                newOrder(tb);
+                return;
             }
         }
+        Table tb = new Table();
+        tb.setId(UUID.randomUUID().toString());
+        tb.setTableNumber(num);
+        tb.setStaffId(currentUser.getId());
+        newOrder(tb);
+        tables.add(tb);
     }
 
     private void newOrder(Table table) {
